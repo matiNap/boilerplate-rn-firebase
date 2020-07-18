@@ -5,4 +5,6 @@ Also include:
 - react-native-elements
 - react-navigation
 - redux-toolkit
+- react-reanimated
+- react-redash
 
