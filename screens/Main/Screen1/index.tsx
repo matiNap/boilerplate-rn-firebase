@@ -11,10 +11,11 @@ const Screen1 = () => {
   const dispatch = useDispatch();
   const demo = useSelector(selectDemo);
   const { navigate } = useNavigation();
+
   return (
     <View>
       <TouchableWithoutFeedback
-        onPress={() => {
+        onPress={async () => {
           dispatch(setDemo(!demo));
         }}
       >

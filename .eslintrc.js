@@ -19,6 +19,8 @@ module.exports = {
         _globals: './theme/globals',
 
         _store: './store.ts',
+
+        _firebase: './Firebase.ts',
       },
     },
   ],
