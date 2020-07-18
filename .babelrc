@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          //Globals types for application
+          "_types": "./types/index.ts",
+
+          // Slices keep reducers and actions in one file ( @reduxjs/toolkit )
+          "_slices": "./reducers/",
+          "_selectors": "./selectors/",
+
+          //Global components for reuse
+          "_components": "./screens/components/",
+
+          //Theming
+          "_typography": "./theme/typography",
+          "_palette": "./theme/palette",
+          "_metrics": "./theme/metrics",
+          "_globals": "./theme/globals",
+
+          // In files now we can: import {RootState} from '_store'
+          "_store": "./store.ts"
+        }
+      }
+    ]
+  ],
+  "presets": ["babel-preset-expo"]
+}

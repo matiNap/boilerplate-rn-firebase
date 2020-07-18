@@ -1,12 +1,40 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "lib": ["es6"],
     "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["react", "react-native", "jest"],
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "strict": true
+    "baseUrl": "./",
+    "allowJs": true,
+    "paths": {
+      "_types": ["./types/index.ts"],
+
+      "_slices/*": ["./reducers/*"],
+      "_selectors/*": ["./selectors/*"],
+
+      "_components/*": ["./screens/components/*"],
+
+      "_typography": ["./theme/typography.ts"],
+      "_palette": ["./theme/palette.ts"],
+      "_metrics": ["./theme/metrics.ts"],
+      "_globals": ["./theme/globals.ts"],
+
+      "_store": ["./store.ts"]
+    }
   }
 }
