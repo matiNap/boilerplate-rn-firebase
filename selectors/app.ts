@@ -1,3 +1,4 @@
 import { RootState } from '_store';
 
-export const selectDemo = (state: RootState) => state.app.demo;
+export const selectIsDarkMode = (state: RootState) =>
+  state.app.isDarkMode;

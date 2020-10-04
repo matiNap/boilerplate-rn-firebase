@@ -1,22 +1,23 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { Button, Container, Header, Text } from 'react-native-simple';
 import { useNavigation } from '@react-navigation/native';
 
-const Screen2 = () => {
+const Screen1 = () => {
+  const { navigate } = useNavigation();
   return (
-    <View style={styles.container}>
-      <Text>Screen 2</Text>
-    </View>
+    <Container backgroundColor="primary">
+      <Header>
+        <Text fontSize="medium">Screen2</Text>
+      </Header>
+
+      <Button
+        variant="filled"
+        style={{ marginTop: 10 }}
+        title="To screen 1"
+        onPress={() => navigate('screen1')}
+      />
+    </Container>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default Screen2;
+export default Screen1;

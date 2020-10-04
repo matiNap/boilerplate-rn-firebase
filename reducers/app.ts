@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { REHYDRATE } from 'redux-persist';
 
+const INIT: { isDarkMode: boolean } = { isDarkMode: false };
+
 const appSlice = createSlice({
   name: 'app',
-  initialState: { demo: false },
+  initialState: INIT,
   reducers: {
-    setDemo: (state, action) => {
-      state.demo = action.payload;
+    switchDarkMode: (state) => {
+      state.isDarkMode = !state.isDarkMode;
     },
   },
   extraReducers: {
@@ -20,6 +22,6 @@ const appSlice = createSlice({
   },
 });
 
-export const { setDemo } = appSlice.actions;
+export const { switchDarkMode } = appSlice.actions;
 
 export default appSlice.reducer;
