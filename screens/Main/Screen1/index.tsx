@@ -1,43 +1,34 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text, Button } from 'react-native-elements';
-import { setDemo } from '_slices/app';
-import { useDispatch, useSelector } from 'react-redux';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { selectDemo } from '_selectors/app';
+import { Button, Container, Header, Text } from 'react-native-simple';
+import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import { switchDarkMode } from '_slices/app';
 
 const Screen1 = () => {
   const dispatch = useDispatch();
-  const demo = useSelector(selectDemo);
+
   const { navigate } = useNavigation();
-
   return (
-    <View>
-      <TouchableWithoutFeedback
-        onPress={async () => {
-          dispatch(setDemo(!demo));
+    <Container backgroundColor="primary">
+      <Header>
+        <Text fontSize="medium">Screen1</Text>
+      </Header>
+      <Button
+        style={{ marginTop: 10 }}
+        variant="filled"
+        title="Switch dark mode"
+        onPress={() => {
+          dispatch(switchDarkMode());
         }}
-      >
-        <Text style={{ alignSelf: 'center', marginVertical: 20 }}>
-          Switch demo reducer
-        </Text>
-      </TouchableWithoutFeedback>
-
-      <Text style={{ fontSize: 30, alignSelf: 'center' }}>
-        {demo ? 'True' : 'False'}
-      </Text>
+      />
 
       <Button
+        variant="filled"
+        style={{ marginTop: 10 }}
         title="To screen 2"
-        containerStyle={{
-          width: '70%',
-          alignSelf: 'center',
-          marginTop: 50,
-        }}
         onPress={() => navigate('screen2')}
       />
-    </View>
+    </Container>
   );
 };
 

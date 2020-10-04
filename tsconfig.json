@@ -29,13 +29,9 @@
 
       "_components/*": ["./screens/components/*"],
 
-      "_typography": ["./theme/typography.ts"],
-      "_palette": ["./theme/palette.ts"],
-      "_metrics": ["./theme/metrics.ts"],
-      "_globals": ["./theme/globals.ts"],
+      "_theme": ["./theme/index.ts"],
 
       "_store": ["./store.ts"],
-
       "_firebase": ["./Firebase.ts"]
     }
   }
